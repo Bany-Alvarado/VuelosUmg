@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="icon" type="image/jpg" href="imagenes/icon.png">
+
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+    <!-- Spinner -->
+    <div id="load" class="loading">
+        <div class='outer-div'>
+            <div class=" middle-div">
+                <div class="loader1" id="loader1"></div>
+                <div class="loader2" id="loader2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <div class="fondo">
+            <div class="container">
+                <h2 class="center-align white-text">REGISTRO</h2>
+
+                <div class="input-field">
+                    <input type="email" id="email" class="white-text">
+                    <label for="email" class=" white-text">Correo Electrónico</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="password" class="white-text">
+                    <label for="password" class=" white-text"> Contraseña </label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="passwordConf" class="white-text">
+                    <label for="passwordConf" class=" white-text"> Confirmar Contraseña </label>
+                </div>
+                <br>
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn-large" id="btnRegistrar">
+                        <i class="material-icons left">save</i>Registrar
+                    </a>
+                    <a class="waves-effect waves-light btn-large red darken-1" id="btnCancelar">
+                        <i class="material-icons left">close</i>Cancelar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/registro.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase  
+        var config = {
+            apiKey: "AIzaSyBpQnTMk9y-BilEohrnTBveYCFUC78pLJI",
+            databaseURL: "https://vuelosumg.firebaseio.com",
+            projectId: "vuelosumg",
+            storageBucket: "vuelosumg.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>

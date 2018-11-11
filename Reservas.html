@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reservacion de Vuelo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <link rel="icon" type="image/jpg" href="imagenes/icon.png">
+
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="nav-cont light-blue darken-3">
+                <div class="nav-wrapper">
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right">
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
+        <!-- Menu -->
+        <aside>
+            <!-- Contenidos Menu -->
+            <ul id="slide-out" class="blue-grey darken-4 sidenav sidenav-fixed sidenav-style">
+                <!-- Titulo del Menu / Datos del Usuario -->
+                <li>
+                    <!-- Este codigo se puede usar para que el fondo sea una imagen -->
+                    <div class="user-view" id="Mostrardatos">
+                        <img src="imagenes/loginn.gif" id="loader" style="width: 100%;height: 180%;">
+                        <div class="background">
+                            <img src="imagenes/2.jpg" style="width: 100%;height: 100%;">
+                        </div>
+                        <!-- En esta Parte Tambien se dibuja los datos del Usuario
+                               en le Menu(laterial) Sidenav -->
+                    </div>
+                </li>
+                <div class="datosmenu">
+                    <li><a class="waves-effect grey-text text-lighten-3" href="inicio.html"><i class="material-icons grey-text text-lighten-3">home</i>Historial
+                            de Vuelos</a></li>
+                    <li><a class="waves-effect grey-text text-lighten-3" href="Reservas.html"><i class="material-icons grey-text text-lighten-3">phonelink</i>Reservación
+                            de Vuelo</a></li>
+                    <!-- <li class="dispositivos_icon"><a class="waves-effect grey-text text-lighten-3" href=" "><i
+                            class="material-icons grey-text text-lighten-3">explore</i></a></li> -->
+                    <li class="dispositivos_icon"><a class="waves-effect grey-text text-lighten-3" href="AvionesLista.html"><i
+                                class="material-icons grey-text text-lighten-3">airplanemode_active</i>Creación
+                            de Aviones</a></li>
+                    <li><a class="waves-effect grey-text text-lighten-3" href="datos.html"><i class="material-icons grey-text text-lighten-3">person</i>Perfil</a></li>
+                </div>
+            </ul>
+        </aside>
+
+        <div class="contenido">
+            <div class="titulo-contenido">
+                <h4>
+                    <i class="material-icons">flight_takeoff</i>
+                    Vuelos Disponibles
+                </h4>
+                <p>Vamos a viajar!!</p>
+                <hr>
+            </div>
+            <br>
+
+            <form class="contenido-from">
+                <select class="browser-default" id="listadeTipoR">
+                    <option value="" disabled selected>Tipo de Vuelo</option>
+                    <option value="Privado">Privado</option>
+                    <option value="Público">Público</option>
+                </select>
+
+                <br />
+                <select class="browser-default" id="avionR">
+                    <option value="" disabled selected>Avión</option>
+                </select>
+                <br />
+                <select class="browser-default" id="destino">
+                    <option value="" disabled selected>Destino</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="México">México</option>
+                    <option value="Estados Unidos">Estados Unidos</option>
+                    <option value="El salvador">El salvador</option>
+                    <option value="Panama">Panama</option>
+                    <option value="España">España</option>
+                    <option value="Inglaterra">Inglaterra</option>
+                    <option value="Italia">Italia</option>
+                </select>
+                <br />
+                <div class="" id="asientosS">
+                    
+                </div>
+                <br />
+                <input type="time" id="horario">
+                <label for="horario"> horario de </label>
+                <br />
+                <input type="date" id="fecha">
+                <label for="horario">Fecha</label>
+                <br />
+        </div>
+        </form><br>
+        <button class="btn waves-effect waves-light btn blue darken-4" type="button" id="guardarReserva">Guardar
+            <i class="material-icons right">save</i>
+        </button>
+        </form>
+    </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <script src="js/loading.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/Reserva.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBpQnTMk9y-BilEohrnTBveYCFUC78pLJI",
+            databaseURL: "https://vuelosumg.firebaseio.com",
+            projectId: "vuelosumg",
+            storageBucket: "vuelosumg.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+
+</body>
+
+</html>
